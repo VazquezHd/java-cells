@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>titulito</title>
+</head>
+<body>
+    <form action="">
+        <section>
+            <p>Datalist</p>
+                <fieldset>
+                    <label for="imputlista">Lista de colores</label>
+                    <input list="listacolores" name="inputlista">
+                    <datalist id="listacolores">
+                        <option value="Azul">
+                        <option value="Rojo">
+                        <option value="Amarillo">
+                        <option value="Negro">
+                        <option value="Blanco">
+                    </datalist>
+                </fieldset>
+        </section>
+
+        <section>
+            <p>Url input</p>
+            <fieldset>
+                <label for="Url">Lista urls</label>
+                <input type="url" name="url" id="url" placeholder="https://ejemplo.com" pattern="https://.*" size="30" list="listaurls" required >
+                <datalist id="listaurls">
+                    <option value="https://www.youtube.com/" label="by Youtube"></option>
+                    <option value="https://twitter.com/?lang=es" label="by twitter"></option>
+                </datalist>
+            </fieldset>
+        </section>
+        
+        <section>
+            <p>Range</p>
+            <fieldset>
+                <label for="range">Rangos</label>
+                <input type="range" list="listanums" step="1" name="range" max="6" min="0">
+                <datalist id="listanums">
+                    <option value="0" label="cero">
+                    <option value="1" label="uno">
+                    <option value="2" label="dos">
+                    <option value="3" label="tres">
+                    <option value="4" label="cuatro">
+                    <option value="5" label="cinco">
+                </datalist>
+
+            </fieldset>
+        </section>
+
+        <br>
+        <input type="submit" name="btn_enviar" id="Enviar">
+        <input type="reset" name="btn_limpiar" id="Limpiar">
+    </form>
+</body>
+</html>
