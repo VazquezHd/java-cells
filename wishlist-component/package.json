@@ -1,0 +1,21 @@
+{
+  "name": "wishlist-component",
+  "version": "0.0.1",
+  "description": "Creando componente WishList en lit element",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "Erick Alvarez",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "lit": "^2.8.0",
+    "wds": "^0.18.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.3.7"
+  }
+}
