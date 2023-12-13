@@ -7,6 +7,8 @@ export class WishListInput extends LitElement{
         height: 50px;
         font-size: 20px;
         font-family: 'Rockwell', serif;
+        color: #c00;
+        border-radius: 10px;
         }
         div{
             display: flex;
@@ -25,9 +27,11 @@ export class WishListInput extends LitElement{
     render(){
         return html`
         <div>
+            
         <input class="input-text" type="text" .value="${this.value}"
                         @input="${this.inputKeyDown}">
         </div>
+        
 
 
         
