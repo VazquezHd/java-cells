@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+    <style>
+        table,td{
+            border: 2px solid black;
+        }
+    </style>
+<body>
+    <form>
+        <fieldset>
+            <h3>Información sobre el pedido</h3><br>
+            <fieldset>
+                <legend>Datos basicos</legend>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" placeholder="Nombre"><br>
+                <label for="descripcion">Descripción</label><br>
+                <textarea name="descripcion" id="descripcion" cols="50" rows="7"></textarea><br>
+                <br>
+                <label for="archivo">Foto</label>
+                <input type="file"  id="archivo">
+                <br>
+                <input type="checkbox" id="opcion1">
+                <label for="opcion1">Añadir contador de visitas</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos Económicos</legend>
+                <label for="precio">Precio</label>
+                <input type="number"> <span>&euro; &nbsp;</span>
+
+                <label for="impuesto">Impuestos</label>
+                <input type="number" style="width: 50px;"> <span>%</span>
+
+                <label for="opciones"></label><br>
+
+                <label>Promoción</label><br>
+
+                <input type="radio" id="opcl" name="clase">
+                <label for="ninguno">Ninguno</label>
+                <br>
+                <input type="radio" id="opc1" name="clase">
+                <label for="trasporte">Transporte gratuito</label>
+                <br>
+                <input type="radio" id="opci" name="clase">
+                <label for="descuento">Descuento</label>
+            </fieldset>
+        </fieldset>
+
+        <section>
+            <table id="table" data-years="5" data-products="100" data-name="productos AB"
+                data-title="Análisis de ventas anuales">
+                <br>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Año</th>
+                        <th colspan="4">Productos</th>
+                    </tr>
+                    <tr>
+                        <th>Producto A</th>
+                        <th>Producto B</th>
+                        <th>Producto C</th>
+                        <th>Producto D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>N-3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>N-2</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>N-1</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Año</td>
+                        <td>Producto A</td>
+                        <td>Producto B</td>
+                        <td>Producto C</td>
+                        <td>Producto D</td>
+                        <tr>
+                            <th rowspan="2">Año</th>
+                            <th colspan="4">Expansion de ventas</th>
+                        </tr>
+                    </tr>
+                    <thead>
+                        
+                    </thead>
+                    <tr>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </form>
+
+    <script>
+        var tableElement = document.getElementById('table');
+        var numYear = tableElement.getAttribute('data-years');
+        var numProduct = tableElement.getAttribute('data-products');
+        var nameProduct = tableElement.getAttribute('data-name');
+        var titleTable = tableElement.getAttribute('data-title');
+
+        console.log('Años:', numYear);
+        console.log('Número de productos mostrados: ', numProduct);
+        console.log('Nombre de productos: ', nameProduct);
+        console.log('Título de la tabla: ', titleTable);
+    </script>
+</body>
+
+</html>
