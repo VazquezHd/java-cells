@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="style17.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons" onclick="handleButtonClick(event)">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">/</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">*</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">-</button>
+            <button class="double">0</button>
+            <button>.</button>
+            <button class="operator">+</button>
+            <button class="double operator" id="calculate">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+        let currentOperator = '';
+        let shouldResetDisplay = false;
+
+        function handleButtonClick(event) {
+            const buttonValue = event.target.textContent;
+
+            if (buttonValue >= '0' && buttonValue <= '9') {
+                handleNumberClick(buttonValue);
+            } else if (buttonValue === '.') {
+                handleDotClick();
+            } else if (buttonValue === '=') {
+                handleEqualClick();
+            } else {
+                handleOperatorClick(buttonValue);
+            }
+
+            updateDisplay();
+        }
+
+        function handleNumberClick(number) {
+            if (shouldResetDisplay) {
+                currentInput = number;
+                shouldResetDisplay = false;
+            } else {
+                currentInput += number;
+            }
+        }
+
+        function handleDotClick() {
+            if (shouldResetDisplay) {
+                currentInput = '0.';
+                shouldResetDisplay = false;
+            } else if (currentInput.indexOf('.') === -1) {
+                currentInput += '.';
+            }
+        }
+
+        function handleOperatorClick(operator) {
+            if (currentOperator !== '') {
+                handleEqualClick();
+            }
+
+            currentOperator = operator;
+            currentInput = parseFloat(currentInput).toString();
+            shouldResetDisplay = true;
+        }
+
+        function handleEqualClick() {
+            if (currentOperator === '') {
+                return;
+            }
+
+            const operand = parseFloat(currentInput);
+            let result;
+
+            switch (currentOperator) {
+                case '+':
+                    result = performAddition(operand);
+                    break;
+                case '-':
+                    result = performSubtraction(operand);
+                    break;
+                case '*':
+                    result = performMultiplication(operand);
+                    break;
+                case '/':
+                    result = performDivision(operand);
+                    break;
+                default:
+                    return;
+            }
+
+            currentInput = result.toString();
+            currentOperator = '';
+        }
+
+        function performAddition(operand) {
+            return parseFloat(currentInput) + operand;
+        }
+
+        function performSubtraction(operand) {
+            return parseFloat(currentInput) - operand;
+        }
+
+        function performMultiplication(operand) {
+            return parseFloat(currentInput) * operand;
+        }
+
+        function performDivision(operand) {
+            if (operand === 0) {
+                alert("Error: Division by zero");
+                clearCalculator();
+                return 0;
+            }
+            return parseFloat(currentInput) / operand;
+        }
+
+        function updateDisplay() {
+            display.textContent = currentInput;
+        }
+
+        function clearCalculator() {
+            currentInput = '';
+            currentOperator = '';
+            shouldResetDisplay = false;
+            updateDisplay();
+        }
+
+        document.getElementById('calculate').addEventListener('click', handleButtonClick);
+    </script>
+
+</body>
+
+</html>

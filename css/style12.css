@@ -1,0 +1,23 @@
+@charset "utf-8";
+.table{
+    border: 3px solid #000;
+}
+.table th{
+    border:1px solid black;
+    background-color: aqua;
+}
+.foot tr, .foot th{
+    text-align: end;
+    background-color: green;
+}
+.foot tr, .foot th{
+    text-align: end;
+    background-color: yellow;
+
+}
+tbody tr td:first-child{
+    background-color: pink;
+}
+.td {
+    border:1px solid black
+}

@@ -1,0 +1,13 @@
+{
+    "nombre": "Hugo Sánchez",
+    "edad": 43,
+    "email": "hugosanchez@example.com",
+    "sexo": "H",
+    "telefono": "156489",
+    "nacimiento": "1991-22-09",
+    "trabajo": {
+    "nombre": "Hugo Sánchez",
+    "email": "hugo.sanchez@example.com",
+    "telefono": "156489"
+    }
+}

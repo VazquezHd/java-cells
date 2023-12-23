@@ -1,0 +1,13 @@
+body{
+    color:aqua;
+    background-color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-color: brown;
+}
+section{
+    border:inherit;
+}
+div{
+    border:inherit;
+}

@@ -1,0 +1,13 @@
+div{
+    border:2px dotted rgb(230, 42, 42);
+    border-radius: 25px;
+    border-radius: 25% 50%;
+    border-radius: 50px 25px 10px;
+
+    
+}
+div{
+    border-color: black;
+    border-width: 10px;
+    border-style: dashed;
+}
